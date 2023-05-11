@@ -1,0 +1,19 @@
+CREATE TABLE QuestionDB(
+    questionText TEXT PRIMARY KEY,
+    correctAnswer TEXT,
+    options TEXT
+);
+
+
+getAllQuestions:
+SELECT * FROM QuestionDB;
+
+insertQuestions:
+INSERT OR REPLACE
+INTO QuestionDB(questionText, correctAnswer, options)
+VALUES (?,?, ?);
+
+
+deleteAllCurrencyRates:
+DELETE FROM QuestionDB;
+
