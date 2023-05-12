@@ -13,6 +13,7 @@ kotlin {
             toolchain.languageVersion.set(JavaLanguageVersion.of(11))
         }
     }
+    jvm("desktop")
     iosX64()
     iosArm64()
     iosSimulatorArm64()
@@ -30,7 +31,6 @@ kotlin {
     }
     
     sourceSets {
-        val sqlDelightVersion = "1.5.5"
         val kotlinxSerialization = "1.5.0"
         val commonMain by getting {
             dependencies{
@@ -78,6 +78,12 @@ kotlin {
             iosX64Test.dependsOn(this)
             iosArm64Test.dependsOn(this)
             iosSimulatorArm64Test.dependsOn(this)
+        }
+        val desktopMain by getting {
+            dependencies {
+                implementation(compose.desktop.common)
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.6.4")
+            }
         }
     }
 

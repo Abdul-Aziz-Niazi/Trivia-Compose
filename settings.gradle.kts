@@ -18,3 +18,4 @@ dependencyResolutionManagement {
 rootProject.name = "Trivia-Compose"
 include(":androidApp")
 include(":shared")
+include(":desktop")
